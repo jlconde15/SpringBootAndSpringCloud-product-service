@@ -18,5 +18,5 @@ jobs:
       - name: Build and test application
         run: mvn -B -Pgithub package --file pom.xml
         env:
-          GITHUB_USER_REF: ${{ secrets.PACKAGE_REPO_USERNAME }}
-          GITHUB_TOKEN_REF: ${{ secrets.PACKAGE_REPO_PASSWORD }}
+          GITHUB_USER_REF: ${{ github.actor }}
+          GITHUB_TOKEN_REF: ${{ secrets.GITHUB_TOKEN }}
